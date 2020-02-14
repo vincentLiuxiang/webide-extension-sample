@@ -11,17 +11,17 @@ export function activate(context: vscode.ExtensionContext) {
 
 	vscode.languages.registerHoverProvider('*', {
 		provideHover: (document, position, token) => {
-			return {
+			return Promise.resolve({
 				contents: ['This is a test hover!!']
-			};
+			});
 		},
 	});
 
 	vscode.languages.registerHoverProvider('javascript', {
     provideHover: (document, position, token) => {
-      return {
+      return Promise.resolve({
         contents: ['This is a javascript file!!']
-      };
+      });
     },
   });
 
