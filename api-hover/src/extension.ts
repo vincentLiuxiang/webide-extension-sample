@@ -17,6 +17,14 @@ export function activate(context: vscode.ExtensionContext) {
 		},
 	});
 
+	vscode.languages.registerHoverProvider('javascript', {
+    provideHover: (document, position, token) => {
+      return {
+        contents: ['This is a javascript file!!']
+      };
+    },
+  });
+
 	context.subscriptions.push(disposable);
 }
 
